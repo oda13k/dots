@@ -16,22 +16,22 @@ function help()
 
 while [[ $# -gt 0 ]]
 do
-	key="$1"
-	case "$key" in
-		"-h"|"--help")
-			help
+    key="$1"
+    case "$key" in
+        "-h"|"--help")
+            help
             exit
-		;;
-		"--prefix")
+        ;;
+        "--prefix")
             if [[ $# == 1 ]]; then  
                 help
                 printf "\n --prefix requires a value.\n"
                 exit 1
-            fi 
+            fi
 
             PREFIX="$2"
             shift 2
-		;;
+        ;;
         "--user")
             if [[ $# == 1 ]]; then  
                 help
@@ -42,12 +42,12 @@ do
             USER_EXP="$2"
             shift 2
         ;;
-		*)
+        *)
             help
             printf "\nUnknown argument \"${key}\".\n"
             exit 1
-		;;
-	esac
+        ;;
+    esac
 done
 
 if [[ -z "$USER_EXP" ]]; then
