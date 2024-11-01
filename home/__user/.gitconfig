@@ -1,0 +1,9 @@
+[user]
+	name = Alexandru Olaru
+	email = xdxalexandru404@gmail.com 
+[core]
+	editor = nvim
+[color]
+	ui = auto
+[init]
+	defaultBranch = main

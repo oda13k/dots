@@ -1,0 +1,11 @@
+from math import *
+import time
+
+def percdiff(x, y):
+    top = -(x - y);
+    bot = x / 100;
+    return top / bot;
+
+def percfinal(initial, perc):
+    return initial + (initial / 100 * perc);
+
