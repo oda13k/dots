@@ -90,7 +90,8 @@ do
     for FILE in $FILES
     do
         DEST_FILE="${PREFIX}/${FILE#"${SCRIPTDIR}/"}"
-        
+        chown root:root ${DEST_FILE}
+
         if ! [[ -f "${DEST_FILE}" ]]; then
             mkdir -p $(dirname ${DEST_FILE})
             cp ${FILE} ${DEST_FILE}
@@ -122,6 +123,7 @@ if ! [[ -z "$HOME_DIR" ]]; then
         if ! [[ -f "${DEST_FILE}" ]]; then
             mkdir -p $(dirname ${DEST_FILE})
             cp ${FILE} ${DEST_FILE}
+            chown ${USER_EXP}:${USER_EXP} ${DEST_FILE}
         else
             diff ${FILE} ${DEST_FILE} > /dev/null
             if [[ "$?" != "0" ]]; then
@@ -134,6 +136,7 @@ if ! [[ -z "$HOME_DIR" ]]; then
                 fi
 
                 cp ${FILE} ${DEST_FILE}
+                chown ${USER_EXP}:${USER_EXP} ${DEST_FILE}
             fi
         fi
     done
