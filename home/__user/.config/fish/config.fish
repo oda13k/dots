@@ -13,8 +13,7 @@ set -x PYTHONSTARTUP ~/.pystart
 # Dev commands
 alias terminal="cd $HOME/Documents/cpp/terminal && source toolchain/toolchain-i686.sh && source tools/run-qemu-x86-default-vars.sh"
 alias fatboy="cd $HOME/Documents/linux/fatboy-6.6.4 && linuxtoolchain"
-alias linuxtoolchain="export CC=clang && export HOSTCC=clang && export LLVM=1 && export KCONFIG_CONFIG=config.fatboy"
-alias vstack="cd $HOME/Documents/js/vspot_stack && ss start docker && doas docker compose -f docker-compose-dev.yml up"
+alias vstack="cd $HOME/Documents/js/vspot && ss start docker && doas docker compose -f docker-compose.yml up"
 alias vback="cd $HOME/Documents/js/vspot_backend && source .env.dev && yarn run dev"
 alias vfront="cd $HOME/Documents/js/vspot_frontend && yarn run dev"
 
@@ -36,19 +35,16 @@ alias rgrep="grep -r"
 alias py="python"
 alias pcf="ping 1.1.1.1"
 alias pdns="ping archlinux.org"
-alias l="ls -l"
+alias l="ls -lv"
+alias f="file"
+alias fe="feh --sort name --version-sort"
 
 # conda is started on demand because starting it for every shell session is slow as hell
 alias conda-start='eval /opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source'
 
-# Only works in bash, can't be fucked to patch it for fish, here for reference
-#alias gcloud-start="source /etc/profile.d/google-cloud-cli.sh"
-
-alias td="gpg $HOME/Downloads/t.tar.gz.gpg && tar -xvf $HOME/Downloads/t.tar.gz -C $HOME/Downloads"
-alias te="tar czvf $HOME/Downloads/t.tar.gz -C $HOME/Downloads t && gpg -c -o $HOME/Downloads/t.tar.gz.gpg $HOME/Downloads/t.tar.gz && rm -rf $HOME/Downloads/t $HOME/Downloads/t.tar.gz"
-
 # System
 set EDITOR nvim
+set -x XCURSOR_SIZE 8
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
