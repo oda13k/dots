@@ -38,17 +38,17 @@ shape = "Beam"
 shape = "Block"
 
 [font]
-size = 10.0
+size = 10.0 
 
 [font.normal]
-family = "Hack"
+family = "Cascadia Code"
 
 [window]
 opacity = 0.92
 
 [window.padding]
-x = 8
-y = 6
+x = 0
+y = 0
 
 [keyboard]
 bindings = [ { key = "ArrowUp", mods = "Shift", action="ScrollLineUp" }, { key = "ArrowDown", mods = "Shift", action = "ScrollLineDown" } ]
